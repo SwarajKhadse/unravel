@@ -1,0 +1,36 @@
+.list-1{
+    list-style: none;
+}
+.footer-contain{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.input-mail{
+    background-color: rgb(239, 233, 233);
+    border: none;
+    height: 40px;
+    width: 200px;
+}
+.butt-submit{
+    height: 40px;
+    border: none;
+    width: 80px;
+    color: white;
+    background-color: rgb(50, 103, 203);
+}
+.address-logo{
+    width: 30px;
+    margin-right: 5px;
+}
+.logos{
+    margin: 20px;
+}
+.para{
+display: inline;
+}
+.pargraph{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}

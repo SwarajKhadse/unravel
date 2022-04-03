@@ -1,0 +1,18 @@
+.img-card{
+    border-radius: 50%;
+    background-color: black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.field-card-main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.342);
+}
