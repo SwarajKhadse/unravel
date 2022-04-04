@@ -73,18 +73,18 @@ function Navbar() {
 
 {/* main body */}
         <div className="main-content">
-          <h1 className="heading">Discover your Perfect Business Nearby!</h1>
-          <h3 className="sub-heading">Check Ratings, Read Reviews & Buy</h3>
-          <div className="search">
+          <h1 className="heading text-center">Discover your Perfect Business Nearby!</h1>
+          <h3 className="sub-heading text-center">Check Ratings, Read Reviews & Buy</h3>
+          <div className="search-text-center">
             <input
               type="text"
-              className="input-search"
-              placeholder="what are you looking for "
+              className="input-search "
+              placeholder="What are you looking for"
             />
             <input
               type="text"
               className="input-search-cat"
-              placeholder="Search category "
+              placeholder="Select Category "
             />
             <button type="button" className="butt-search">
               Search
@@ -96,29 +96,40 @@ function Navbar() {
 
 
        
-        <div className="Services">
+       <div className="Services ">
             <div className="Services-compo">
+              <div className="Services-img">
              <img src="./../../assets/bag.png" className="img-service" alt="shooping" />
+             </div>
              <h4 className="head-service">Shops</h4>
             </div> 
             <div className="Services-compo">
+            <div className="Services-img">
              <img src="./../../assets/rest.png" className="img-service" alt="shooping" />
+             </div>
              <h4 className="head-service">Home Stays</h4>
             </div> 
             <div className="Services-compo">
+            <div className="Services-img">
              <img src="./../../assets/restaurant.png" className="img-service" alt="shooping" />
+            </div>
              <h4 className="head-service">Restaurants </h4>
             </div> 
             <div className="Services-compo">
+            <div className="Services-img">
              <img src="./../../assets/music.png" className="img-service" alt="shooping" />
+             </div>
              <h4 className="head-service">Music</h4>
             </div> 
             <div className="Services-compo  extra-border">
+            <div className="Services-img">
              <img src="./../../assets/dots.png" className="img-service" alt="shooping" />
+             </div>
              <h4 className="head-service">More</h4>
             </div> 
+            </div> 
       </div>
-       </div>
+      
     </>
   );
 }

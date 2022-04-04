@@ -1,0 +1,19 @@
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 30px;
+  }
+  .on {
+    color: orange;
+  }
+  .off {
+    color: #ccc;
+    height: 10px;
+
+  }
+  .star{
+    height: 40px;
+    width: 30px;
+  }

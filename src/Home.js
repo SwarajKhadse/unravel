@@ -9,8 +9,6 @@ function Home() {
     <Navbar/>
     <Body/>
     <Footer/>
-    {/* </img> */}
-    
     </>
   )
 }
