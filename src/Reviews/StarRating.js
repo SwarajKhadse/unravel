@@ -27,7 +27,7 @@ function StarRating() {
         
       })}
       
-      <div><span>{rating }/5</span></div>
+      <div><span className='rate-text'>{rating }/5</span></div>
     </div>
     </>
   )

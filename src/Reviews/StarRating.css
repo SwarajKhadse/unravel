@@ -14,6 +14,13 @@ button {
 
   }
   .star{
-    height: 40px;
-    width: 30px;
+    height: 80px;
+    /* width: 30px; */
+    font-size: 28px;
+  }
+  .star-rating{
+    margin-left: -19px;
+  }
+  .rate-text{
+    margin-left: 5px;
   }
