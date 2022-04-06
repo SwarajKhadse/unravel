@@ -5,7 +5,10 @@ import Footer from './Component/Footer'
 import AboutNavbar from './Component/about/AboutNavbar/AboutNavbar'
 import './style.css'
 import AboutBody from './Component/about/AboutBody/AboutBody'
-
+import Bookmark from './Component/Dashboard/Bookmarks/Bookmark'
+import Review from './Component/Dashboard/Review/Review'
+import Dashboard from './Component/Dashboard/Business Dashboard/Dashboard'
+import Photos from './Component/Dashboard/Photos/Photos'
 function Home() {
   return (
     <>
@@ -14,6 +17,10 @@ function Home() {
     <Footer/>
     <AboutNavbar/>
     <AboutBody/>
+    <Bookmark/>
+    <Review/>
+    <Dashboard  />
+    <Photos/>
     </>
   )
 }

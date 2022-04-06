@@ -1,0 +1,64 @@
+.back-color{
+    height: 30vw;
+    width: 100%;
+    background-color: rgb(28, 28, 223);
+    
+}
+.user-initial{
+   
+    text-align: center;
+    margin-top:3px;
+    padding-top: 5px;
+    font-weight: bold;
+
+    }
+.Bookmark{
+    /* margin-bottom: 500px; */
+}
+.user-logo{
+   width: 70px;
+   height: 70px;
+    background-color:  rgb(28, 28, 223);
+    border-radius: 50%;
+    color: white;
+    margin-left: 20px;
+    
+            
+}
+.hello{
+   color: rgb(114, 109, 109);
+}
+.list-book{
+     margin-left: 20px  ;
+}
+
+
+.list-book:hover{
+background-color: rgb(212, 209, 209);
+cursor: pointer;
+border-radius: 5px;
+}
+.Book-Rev{
+    display: flex;
+    flex-direction: column;
+    
+}
+.main-cont{
+    border: 1px solid black;
+    margin-bottom: 200px;
+    margin-top: -220px;
+    background-color: white;
+    
+}
+.pqr{
+    margin-top: 80px;
+}
+.book-dash{
+    /* margin-bottom: 400px; */
+}
+.Review-card{
+    margin-top: -100px;
+}
+@media only screen and (max-width: 400px) {
+    
+}

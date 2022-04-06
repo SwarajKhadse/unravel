@@ -85,7 +85,7 @@ office tower, Bangalore</p>
                 </div>
              </div>
         </div>
-
+        <h2 className="text-center Rev-text">Reviews</h2>
         <AboutReview />
 
     </div>

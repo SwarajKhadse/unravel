@@ -1,0 +1,109 @@
+.back-color{
+    height: 30vw;
+    width: 100%;
+    background-color: rgb(28, 28, 223);
+    
+}
+/* .Bookmark {
+    height: 100%;
+} */
+.user-initial{
+   
+    text-align: center;
+    margin-top:3px;
+    padding-top: 5px;
+    font-weight: bold;
+
+    }
+
+.user-logo{
+   width: 70px;
+   height: 70px;
+    background-color:  rgb(28, 28, 223);
+    border-radius: 50%;
+    color: white;
+    margin-left: 20px;
+    
+            
+}
+.hello{
+   color: rgb(114, 109, 109);
+}
+.list-book{
+     margin-left: 20px  ;
+}
+
+
+.list-book:hover{
+background-color: rgb(212, 209, 209);
+cursor: pointer;
+border-radius: 5px;
+}
+.Book-Rev{
+    display: flex;
+    flex-direction: column;
+    
+}
+.main-cont{
+    border: 1px solid black;
+    /* margin-bottom: -200px; */
+    /* margin-top: -220px; */
+    background-color: white;
+    
+}
+.pqr{
+    margin-top: 80px;
+}
+
+.book-dash{
+    /* margin-bottom: 400px; */
+}
+@media only screen and (max-width: 300px) {
+    .Bookmark{
+        margin-top: 140px;
+    }
+    .main-cont{
+        margin-bottom: 200px    ;
+    }
+    .user-logo{
+        width: 40px;
+        height: 40px;
+        margin-top: 5px;
+        padding-top: 13 px;
+    }
+    .user-initial{
+        padding-top: 0px;
+        margin-top: -10px;
+    }
+       .pqr{
+         /* position: relative;
+           top: 42px;   */
+           margin-top: 27px;
+          
+       }
+       .Book-Rev{
+           position: relative;
+           top: 189px;
+       }
+       .list-cont{
+           position: relative;
+           top: 89px;
+       }
+       .Book1{
+           /* margin-top: 300px; */
+       }
+       .hello{
+           position: relative;
+           top: -51px;
+           left: 64px;
+       }
+       .xyz{
+           margin-top: -360px;
+       }
+       
+
+}
+
+.top-margin{
+    padding-top: 100px;
+}

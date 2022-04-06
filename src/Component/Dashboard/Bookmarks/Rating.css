@@ -1,0 +1,28 @@
+.small-logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color:rgb(83, 83, 179) ;
+    color: rgb(28, 28, 223);
+    margin-left: 150PX;
+
+}
+.Book-mark{
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 1px black;
+
+    }
+    .abc{
+        margin-left: 20px;
+        margin-right: 100px;
+    }
+    .xyz{
+        margin-right: 120px;
+
+    }
+  .user-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
