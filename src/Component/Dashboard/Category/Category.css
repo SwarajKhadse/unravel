@@ -1,7 +1,7 @@
 .back-color{
     height: 30vw;
     width: 100%;
-    background-color: rgb(28, 28, 2);
+    background-color: rgb(28, 28, 223);
     
 }
 .user-initial{
@@ -11,6 +11,9 @@
     padding-top: 5px;
     font-weight: bold;
 
+    }
+.Bookmark{
+    /* margin-bottom: 500px; */
 }
 .user-logo{
    width: 70px;
@@ -28,14 +31,17 @@
 .list-book{
      margin-left: 20px  ;
 }
-.photo-parent{
-    display: flex;
-    flex-direction: row;
-}
+
+
 .list-book:hover{
 background-color: rgb(212, 209, 209);
 cursor: pointer;
 border-radius: 5px;
+}
+.Book-Rev{
+    display: flex;
+    flex-direction: column;
+    
 }
 .main-cont{
     border: 1px solid black;
@@ -50,21 +56,33 @@ border-radius: 5px;
 .book-dash{
     /* margin-bottom: 400px; */
 }
-.small-logo {
-    font-size: 25px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+.token{
+    margin-bottom: -2px;
+    /* font-weight: bolder; */
+    color: rgb(177, 169, 169);
+    font-size: 17px;
 }
-.photo-col{
+.pin{
     display: flex;
-    flex-direction: column;
+    
     
 }
-@media only screen and (max-width:700px) and (min-width: 300px){
-    .photo-col{
+.country{
+    margin-left: 100px;
+}
+.list2{
+    list-style: circle;
 
-        margin-left: 50px
-    }
-
+}
+.list1-cont{
+    margin-top: 20px;
+}
+.Cat-comp{
+    
+    border: 1px solid rgb(161, 160, 160);
+    margin-top: 20px;
+   margin-bottom: 5px;
+}
+.Cat-sub{
+    font-size: 20px;
 }

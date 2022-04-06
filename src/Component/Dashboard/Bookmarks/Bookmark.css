@@ -22,7 +22,7 @@
     background-color:  rgb(28, 28, 223);
     border-radius: 50%;
     color: white;
-    margin-left: 20px;
+  
     
             
 }
@@ -106,4 +106,24 @@ border-radius: 5px;
 
 .top-margin{
     padding-top: 100px;
+}
+.top-padding{
+    padding-top: 50px;
+}
+@media only screen and (max-width:700px) and (min-width: 300px){
+.pqr{
+      position: relative;
+left: 95px;
+top: -13px;
+}
+.hello{
+    position: relative;
+    left: 26px;
+    top: -6px;
+
+}
+.user-logo{
+    position: relative;
+    left: 5px;
+}
 }

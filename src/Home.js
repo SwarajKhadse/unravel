@@ -9,6 +9,10 @@ import Bookmark from './Component/Dashboard/Bookmarks/Bookmark'
 import Review from './Component/Dashboard/Review/Review'
 import Dashboard from './Component/Dashboard/Business Dashboard/Dashboard'
 import Photos from './Component/Dashboard/Photos/Photos'
+import Category from './Component/Dashboard/Category/Category'
+import ReviewHome from './Component/Dashboard/ReviewHome/ReviewHome'
+import Login from './Component/Dashboard/Login/Login'
+import Signup from './Component/Dashboard/Signup/Signup'
 function Home() {
   return (
     <>
@@ -21,6 +25,11 @@ function Home() {
     <Review/>
     <Dashboard  />
     <Photos/>
+    <Category/>
+   
+    <Login/>
+    <Signup/>
+    <ReviewHome/>
     </>
   )
 }

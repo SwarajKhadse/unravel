@@ -1,6 +1,13 @@
 .group-img{
     background-image: url('./../../../../public/assets/background.jpg');
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border: 1px solid black;
+    
+}
+@media only screen and (max-width:700px) and (min-width: 300px){
+.group-img{
+    position: relative;
+    left: 93px;
+}
 }

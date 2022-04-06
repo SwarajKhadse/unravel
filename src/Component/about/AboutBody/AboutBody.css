@@ -64,3 +64,13 @@ a{
     width: 100%;
     height: 100%;
 }
+@media only screen and (max-width:700px) and (min-width: 300px){
+    .map{
+        position: relative;
+        left: 30px;
+    }
+    .text-part{
+        position: relative;
+        left: 45px;
+    }
+}
