@@ -1,6 +1,7 @@
 import React from "react";
 import "./Bookmark.css";
 import Rating from "./Rating";
+import { Link ,Routes,Route} from "react-router-dom";
 function Bookmark() {
   return (
     <>
@@ -20,9 +21,9 @@ function Bookmark() {
                     
                  </div>
                  <div  className="container list-cont ">
-                   <div className="list-book mb-3 mt-3 ml-3  list-book "><span className="fw-bold ">Bookmarks</span></div>
-                   <div className="list-book mb-3 ml-3 list-book "><span className="fw-bold ">Reviews</span></div>
-                   <div className="list-book ml-3 list-book book-dash"><span className="fw-bold ">Business Dashboard</span></div>
+                   <div className="list-book mb-3 mt-3 ml-3  list-book "><span className="fw-bold "><Link to="/user/bookmark">Bookmarks</Link></span></div>
+                   <div className="list-book mb-3 ml-3 list-book "><span className="fw-bold "><Link to="/user/review">Reviews</Link> </span></div>
+                   <div className="list-book ml-3 list-book book-dash"><span className="fw-bold "><Link to="/user/dashboard">Business Dashboard</Link></span></div>
                    </div>
              </div>
              <div className="col-md-9 Book2 top-margin  ">

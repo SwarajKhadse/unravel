@@ -1,5 +1,6 @@
 import React from 'react'
 import './ReviewHome.css'
+import Footer from '../../Footer'
 function ReviewHome() {
   return (
  <>
@@ -49,6 +50,9 @@ function ReviewHome() {
 
           </div> 
           </div>
+      
+          <Footer/>
+          
     </div>
       
 
