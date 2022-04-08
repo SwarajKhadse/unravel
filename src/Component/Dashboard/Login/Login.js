@@ -1,6 +1,23 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { toast } from "react-toast";
 import "./Login.css";
 function Login() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")   
+
+  const loginClick = async() => {
+
+    let reqUrl = `https://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/user/${email}/signin`
+    await axios.post(reqUrl , {"pasword":password})
+      .then( ( res) => {
+        if(res.isSuccess){
+          console.log(res);
+          toast.success("login successful !!")
+        }
+      })
+  }
+
   return (
     <div className="row ">
       
@@ -30,8 +47,8 @@ function Login() {
             </div>
               <form action="#" method='get'>
                  {/* form started */}
-                   <input type="email" className="log-mail fw-bold" placeholder='Email' name="email" id="UserEmail" />
-                   <input type="password" className="log-mail fw-bold"  placeholder='Password ' name="pass" id="userPass" />
+                   <input type="email" className="log-mail fw-bold" placeholder=' Email' name="email" id="UserEmail" onChange={(e) => {setEmail(e.target.value)}} />
+                   <input type="password" className="log-mail fw-bold"  placeholder='Password ' name="pass" id="userPass" onChange={(e) => {setPassword(e.target.value)}} />
                     <div className="row">
                       <div className="col-6">
                    <input type="checkbox" className='log-check' name="ckeck" id="userCheck" />
@@ -42,7 +59,7 @@ function Login() {
                    </div>
                    </div>
 
-                   <button type="submit" className="log-log">Login to Vanno</button>
+                   <button onClick={loginClick} className="log-log">Login to Vanno</button>
                    <div className="log-new1">
                    <span className="log-new">New to unravel </span>
                    <a href="#" className="fw-bold "> Sign up!</a>

@@ -1,11 +1,10 @@
 import React from 'react'
-import './Category.css'
-import Categorysub from './Categorysub'
-function Category() {
-  const cat=['Software Developement','Website Developement','Social Media Developement','custom LMS support','E-commerce Website Develop','Education Consultancy'];
+import './ReviewsB.css'
+import Comment from './Comment.js'
+function ReviewsB() {
   return (
-   <>
-          <div className="Bookmark">
+    <>
+           <div className="Bookmark">
         <div className="back-color"> </div>
         <div className="container ">
           <div className="row main-cont"> 
@@ -33,35 +32,22 @@ function Category() {
              </div>
              <div className="col-md-8 Book2">
                    <div>
-                         <h2 className="fw-bold pqr ">Category</h2>
-                         <div className='row Cat-comp'>
-                          <p  className='Cat-sub fw-bold'>Software Company</p>
-                          {/* <p>primary category</p> */}
-      
-    </div>
-                         {
-                           cat.map((e)=>{
-                             return (
-                               <Categorysub title={e}/>
-                             )
-                           })
-                         }
-                          <div className='row Cat-comp'>
-                          <a href="#" className='Cat-sub'>+ add another service</a>
-      
-    </div>
-
-                        
-                         
+                         <h2 className="fw-bold mt-3 pqr">Reviews</h2>
+                         <div className='mt-3 mb-3'>
+                        <Comment/>
+                        </div>
+                        <div className='mt-3 mb-3'>
+                        <Comment/>
+                        </div>  
                    </div>
-                  
+
              </div>
           </div>
         </div>
       </div>
    
-   </>
+    </>
   )
 }
 
-export default Category
+export default ReviewsB
