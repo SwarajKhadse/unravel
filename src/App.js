@@ -12,6 +12,7 @@ import Business from './Component/Dashboard/BusinessNew/Business';
 import Dashboard from './Component/Dashboard/Business Dashboard/Dashboard';
 import Photos from './Component/Dashboard/Photos/Photos'
 import Category from './Component/Dashboard/Category/Category';
+// import Business from './Component/Dashboard/BusinessNew/Business';
 import Home from './Home';
 function App(){
     
@@ -19,6 +20,7 @@ function App(){
     return (
         <>  
         {/* <Home/> */}
+  
        
         
 <BrowserRouter>
@@ -41,7 +43,7 @@ function App(){
                    <Route path="review" element={<ReviewsB/>}/>
                    <Route path="photos" element={<Photos/>}/>
                    <Route path="category" element={<Category/>}/>
-                   
+                   <Route path="business" element={<Business/>}/>
                   </Route>
      
       </Routes>

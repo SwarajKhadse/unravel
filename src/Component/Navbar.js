@@ -12,7 +12,7 @@ function Navbar() {
   const [searchCat, setSearchCat] = useState("")
 
   const btnSearchClick = () => {
-    alert("clicked");
+    console.log("alert called")
     // const reqUrl = `Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/search`
     // const reqBody = {
     //   "searchString": {searchString},
@@ -102,6 +102,8 @@ function Navbar() {
             Check Ratings, Read Reviews & Buy
           </h3>
           <div className="search-text-centerr">
+ 
+           <form onSubmit={btnSearchClick}>
             <input
               type="text"
               className="input-search "
@@ -114,9 +116,12 @@ function Navbar() {
               placeholder="Select Category "
               onChange={(e) => {setSearchCat(e.target.value)}}
             />
-            <button  onCLick={btnSearchClick} className="butt-search">
+            {/* <button  onSubmit={btnSearchClick} type='submit' className="butt-search">
               Search
-            </button>
+            </button> */}
+              
+             <input type="submit" value="submit" />
+            </form>
           </div>
         </div>
 
