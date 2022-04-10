@@ -103,7 +103,7 @@ function Navbar() {
           </h3>
           <div className="search-text-centerr">
  
-           <form onSubmit={btnSearchClick}>
+           
             <input
               type="text"
               className="input-search "
@@ -120,8 +120,10 @@ function Navbar() {
               Search
             </button> */}
               
-             <input type="submit" value="submit" />
-            </form>
+              <button type="button" onCLick={btnSearchClick} className="butt-search">
+              Search
+            </button>
+         
           </div>
         </div>
 

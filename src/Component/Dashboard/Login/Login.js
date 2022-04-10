@@ -7,12 +7,14 @@ import "./Login.css";
 import GoogleLogin from 'react-google-login';
 function Login() {
   const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")   
+  const [passsword, setPassword] = useState("")   
   const navigate = useNavigate ();
-  const loginClick = async() => {
 
+
+  
+  const loginClick = async() => {
     let reqUrl = `https://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/user/${email}/signin`
-    await axios.post(reqUrl , {"password":password})
+    await axios.post(reqUrl , {"password":passsword})
       .then( ( res) => {
         if(res.data.isSuccess == true){
           console.log(res);
