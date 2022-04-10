@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast,errorToast } from "react-toast";
 import "./Signup.css";
-
+import { useNavigate ,Link  } from "react-router-dom";
+import Login from "../Login/Login";
 function Signup() {
   const [name, setName] = useState("");
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [conpassword, setConPassword] = useState("");
+
+  const navigate = useNavigate ();
 
   const signUp = async() => {
     // console.log("userData " , name ,lastname ,email ,password , conpassword)
@@ -20,7 +23,7 @@ function Signup() {
     };
     
     if (password === conpassword) {
-      alert("called")
+      
       const reqBody = {
         emailId: email,
         gender: "Prefer not to say",
@@ -34,10 +37,15 @@ function Signup() {
 
       const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/user`;
 
-      await axios.post(reqUrl ,reqBody).then((res) =>{
-        if(res.isSuccess){
+      await axios.post(reqUrl ,reqBody).then((res) =>{ 
+        console.log(res);
+        if(res.data.isSuccess == true){
           console.log(res , "res")
-          toast.success('Message sent successfully!')
+          alert("User Registered successFully")
+          navigate(`/login`)
+        }else{
+          alert(res.data.message);
+          navigate(`/login`)
         }
       }).then( (err) => {
         toast.error(err)
@@ -143,13 +151,14 @@ function Signup() {
               </div>
 
               <button type="button" onClick={signUp} className="log-log">
-                Register Now!
-              </button>
+                 {/* <Link to="/login" className="butt">Register Now!</Link>  */}
+                 
+Register Now              </button>
               <div className="log-new1">
                 <span className="log-new">Already have an account </span>
                 <a href="#" className="fw-bold ">
                   {" "}
-                  Sign in!
+                  <Link to="/login" >Login</Link> 
                 </a>
               </div>
             </form>

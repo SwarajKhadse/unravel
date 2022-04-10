@@ -1,7 +1,57 @@
-import React from 'react'
+import React ,{useState ,useEffect} from 'react'
 import './Dashboard.css'
 import { Link ,Routes,Route} from "react-router-dom";
+import axios from 'axios';
+
 function Dashboard() {
+
+   const getReviewsData = async () => {
+      const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/review/user/khadseswaraj@gmail.com`;
+  
+      await axios
+        .get(reqUrl)
+        .then((res) => {
+          if (res.data.isSuccess == true) {
+            console.log(res);
+            console.log(res.data, "res.data");
+            console.log(res.data.data, "res.data.data");
+            // alert("User Registered successFully")
+          } else {
+            alert(res.data.message);
+          }
+        })
+        .then((err) => {
+          // toast.error(err)
+          console.log(err);
+        });
+    };
+
+    const getBuisnessData = async () => {
+      const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/reaction/hasmarita@gmail.com/businesses`;
+  
+      await axios
+        .get(reqUrl)
+        .then((res) => {
+          if (res.data.isSuccess == true) {
+            console.log(res);
+            console.log(res.data, "res.data.buisness");
+            console.log(res.data.data, "res.data.data");
+            // alert("User Registered successFully")
+          } else {
+            alert(res.data.message);
+          }
+        })
+        .then((err) => {
+          // toast.error(err)
+          console.log(err);
+        });
+    };
+
+    useEffect(() => {
+      getBuisnessData();
+      getReviewsData();
+    }, [])
+    
   return (
    <>
          <div className="Bookmark">

@@ -50,8 +50,9 @@ function ReviewHome() {
 
           </div> 
           </div>
-      
+          <div className='foot'>
           <Footer/>
+          </div>
           
     </div>
       

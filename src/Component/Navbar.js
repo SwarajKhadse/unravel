@@ -10,22 +10,24 @@ function Navbar() {
 
   const [searchString, setSearchString] = useState("")
   const [searchCat, setSearchCat] = useState("")
-  const btnSearchClick = async () => {
-    const reqUrl = `Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/search`
-    const reqBody = {
-      "searchString": {searchString},
-      "searchLocation": {"country":"india",
-                          "state":"",
-                          "city":"",
-                          "postalCode":""
-                        }
-    }
+
+  const btnSearchClick = () => {
+    alert("clicked");
+    // const reqUrl = `Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/search`
+    // const reqBody = {
+    //   "searchString": {searchString},
+    //   "searchLocation": {"country":"india",
+    //                       "state":"",
+    //                       "city":"",
+    //                       "postalCode":""
+    //                     }
+    // }
     
-    await axios.get(reqUrl ,searchString).then( (res) => {
-        if(res.isSuccess){
-          //setData here           
-        }
-    })
+    // await axios.get(reqUrl ,searchString).then( (res) => {
+    //     if(res.isSuccess){
+    //       //setData here           
+    //     }
+    // })
   }
   return (
     <>
@@ -99,7 +101,7 @@ function Navbar() {
           <h3 className="sub-heading text-center">
             Check Ratings, Read Reviews & Buy
           </h3>
-          <div className="search-text-center">
+          <div className="search-text-centerr">
             <input
               type="text"
               className="input-search "
@@ -112,7 +114,7 @@ function Navbar() {
               placeholder="Select Category "
               onChange={(e) => {setSearchCat(e.target.value)}}
             />
-            <button type="button" onCLick={searchClick} className="butt-search">
+            <button  onCLick={btnSearchClick} className="butt-search">
               Search
             </button>
           </div>
