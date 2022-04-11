@@ -26,7 +26,7 @@ function Signup() {
       
       const reqBody = {
         emailId: email,
-        gender: "Prefer not to say",
+        gender: "male",
         firstName: name,
         lastName: lastname,
         dob: "1975-06-15",

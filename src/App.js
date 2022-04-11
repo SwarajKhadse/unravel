@@ -12,6 +12,8 @@ import Business from './Component/Dashboard/BusinessNew/Business';
 import Dashboard from './Component/Dashboard/Business Dashboard/Dashboard';
 import Photos from './Component/Dashboard/Photos/Photos'
 import Category from './Component/Dashboard/Category/Category';
+import AboutBody from  './Component/about/AboutBody/AboutBody'
+
 // import Business from './Component/Dashboard/BusinessNew/Business';
 import Home from './Home';
 function App(){
@@ -43,6 +45,8 @@ function App(){
                    <Route path="review" element={<ReviewsB/>}/>
                    <Route path="photos" element={<Photos/>}/>
                    <Route path="category" element={<Category/>}/>
+                   <Route path="business" element={<Business/>}/>
+                   <Route path="about" element={<AboutBody/>}/>
                    <Route path="business" element={<Business/>}/>
                   </Route>
      

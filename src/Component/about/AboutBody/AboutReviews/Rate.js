@@ -1,5 +1,3 @@
-import React from 'react'
-import './Rate.css'
 import StarRating from '../../../../Reviews/StarRating'
 
 function Rate(props) {
