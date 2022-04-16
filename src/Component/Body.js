@@ -12,6 +12,7 @@ function Body() {
     "Coffee store ADC",
   ];
   const secondRow = ["FastFood store ADC", "Cloth store ADC", "Food store ADC"];
+  const [buisnessData, setBuisnessData] = useState([]);
 
   const getBuisnessData = async () => {
     const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/best-businesses/category`;
@@ -20,8 +21,9 @@ function Body() {
       .get(reqUrl)
       .then((res) => {
         if (res.data.isSuccess == true) {
-          console.log(res);
-          console.log(res.data, "res.data");
+          // console.log(res);
+          console.log(res.data, "res.buisness.data");
+          setBuisnessData(res.data.data);
           // alert("User Registered successFully")
         } else {
           alert(res.data.message);
@@ -33,26 +35,9 @@ function Body() {
       });
   };
 
-  const getReviewsData = async () => {
-    const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/best-reviews`;
+  console.log(buisnessData , " buisnessData");
 
-    await axios
-      .get(reqUrl)
-      .then((res) => {
-        if (res.data.isSuccess == true) {
-          console.log(res);
-          console.log(res.data, "res.data");
-          console.log(res.data.data, "res.data.data");
-          // alert("User Registered successFully")
-        } else {
-          alert(res.data.message);
-        }
-      })
-      .then((err) => {
-        // toast.error(err)
-        console.log(err);
-      });
-  };
+  
 
   const browseBuisnessByCat = async () => {
     const reqUrl = `Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/business/{}`;
@@ -74,9 +59,10 @@ function Body() {
       });
   };
 
+
+
   useEffect(() => {
     getBuisnessData();
-    getReviewsData();
   }, []);
 
   return (
@@ -94,23 +80,34 @@ function Body() {
           </h1>
           <h4 className="text-center sub-text">Famous shops</h4>
           <div className="row">
-            {firstRow.map((title) => {
+            {/* {firstRow.map((title) => {
               return (
                 <div className="col-md-4">
                   <ShopCard title={title} />
                 </div>
               );
-            })}
+            })} */}
+
+            {buisnessData ? 
+              buisnessData.map((data) => {
+                return (
+                  <div className="col-md-4">
+                    <ShopCard title={data.name} thumbnailUrl={data.thumbnailUrl} />
+                  </div>
+                )
+              })
+             : ""
+            }
           </div>
 
           <div className="row">
-            {secondRow.map((title) => {
+            {/* {secondRow.map((title) => {
               return (
                 <div className="col-md-4">
                   <ShopCard title={title} />
                 </div>
               );
-            })}
+            })} */}
           </div>
         </div>
         <br />

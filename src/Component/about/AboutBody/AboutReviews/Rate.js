@@ -1,5 +1,5 @@
 import StarRating from '../../../../Reviews/StarRating'
-
+import AboutReview from './AboutReview'
 function Rate(props) {
   return (
     <>
@@ -10,18 +10,18 @@ function Rate(props) {
                 <img  src='./assets/background.jpg' className='user-img' />
                 </div>
                 <div>
-                  <StarRating/>
+                  <StarRating rating={props.reviewData.ratingStar}/>
                 </div>
             </div>
 
             <div className='container text-left'>
               <br />
-              <b>Jhon Doe</b> review <br/>
-              <span className='exp'> <b>"Great Experience"</b></span> <br/> <br />
+              <b>{props.reviewData.businessName}</b> review <br/>
+              <span className='exp'> <b>"{props.reviewData.message}"</b></span> <br/> <br />
               <p>I really liked the place ce lot as it
 covered all the things I wanted
 </p>
-<p>Published : 26 February 2022</p>
+<p>Published :  {props.reviewData.createdDate}</p>
             </div> 
                     
 

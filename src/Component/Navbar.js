@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { Link ,Routes,Route} from "react-router-dom";
+import { Link, Routes, Route } from "react-router-dom";
 import Body from "./Body";
 import Footer from "./Footer";
 import Login from "./Dashboard/Login/Login";
@@ -10,24 +10,24 @@ function Navbar() {
 
   const [searchString, setSearchString] = useState("")
   const [searchCat, setSearchCat] = useState("")
+  const btnSearchClick = async () => {
+    alert("button CLicked")
+    const reqUrl = `Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/search`
+    const reqBody = {
+      "searchString": { searchString },
+      "searchLocation": {
+        "country": "india",
+        "state": "",
+        "city": "",
+        "postalCode": ""
+      }
+    }
 
-  const btnSearchClick = () => {
-    console.log("alert called")
-    // const reqUrl = `Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/search`
-    // const reqBody = {
-    //   "searchString": {searchString},
-    //   "searchLocation": {"country":"india",
-    //                       "state":"",
-    //                       "city":"",
-    //                       "postalCode":""
-    //                     }
-    // }
-    
-    // await axios.get(reqUrl ,searchString).then( (res) => {
-    //     if(res.isSuccess){
-    //       //setData here           
-    //     }
-    // })
+    await axios.get(reqUrl, searchString).then((res) => {
+      if (res.isSuccess) {
+        //setData here           
+      }
+    })
   }
   return (
     <>
@@ -57,20 +57,20 @@ function Navbar() {
               >
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0 nav-compo">
                   <li className="nav-item ml-3">
-                    <Link to="/" className='link-home'>Home</Link>             
-                          </li>
-                  <li className="nav-item">
-                     <Link to="/review" className='link-home'>Reviews</Link> 
+                    <Link to="/" className='link-home'>Home</Link>
                   </li>
                   <li className="nav-item">
-              
-                    <Link to="/#" className='link-home'>Blogs</Link> 
-                
+                    <Link to="/review" className='link-home'>Reviews</Link>
                   </li>
                   <li className="nav-item">
-                    
-                     <Link to="/#" className='link-home'> Unravel for Business</Link> 
-                 
+
+                    <Link to="/#" className='link-home'>Blogs</Link>
+
+                  </li>
+                  <li className="nav-item">
+
+                    <Link to="/#" className='link-home'> Unravel for Business</Link>
+
                   </li>
                 </ul>
                 <form className="d-flex">
@@ -78,13 +78,13 @@ function Navbar() {
                     className=" m-3  but-home"
                     type="submit"
                   >
-                        <Link to="/login" className="butt">Login</Link> 
+                    <Link to="/login" className="butt">Login</Link>
                   </button>
                   <button
                     className=" m-3  but-home"
                     type="submit"
                   >
-                  <Link to="/signup" className="butt" >Sign up</Link> 
+                    <Link to="/signup" className="butt" >Sign up</Link>
                   </button>
                 </form>
               </div>
@@ -101,29 +101,22 @@ function Navbar() {
           <h3 className="sub-heading text-center">
             Check Ratings, Read Reviews & Buy
           </h3>
-          <div className="search-text-centerr">
- 
-           
+          <div className="search-text-center">
             <input
               type="text"
               className="input-search "
               placeholder="What are you looking for"
-              onChange={(e) => {setSearchString(e.target.value)}}
+              onChange={(e) => { setSearchString(e.target.value) }}
             />
             <input
               type="text"
               className="input-search-cat"
               placeholder="Select Category "
-              onChange={(e) => {setSearchCat(e.target.value)}}
+              onChange={(e) => { setSearchCat(e.target.value) }}
             />
-            {/* <button  onSubmit={btnSearchClick} type='submit' className="butt-search">
-              Search
-            </button> */}
-              
-              <button type="button" onCLick={btnSearchClick} className="butt-search">
+            <button type="button" onClick={btnSearchClick} className="butt-search">
               Search
             </button>
-         
           </div>
         </div>
 
@@ -182,8 +175,8 @@ function Navbar() {
       </div>
       <Body />
       <Footer />
-     
-               
+
+
     </>
   );
 }

@@ -1,0 +1,27 @@
+
+.nav-compo{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.butt-login1{
+    background-color: rgb(45, 123, 224);
+    color: black;
+}
+.butt-signup1{
+    background-color: rgb(18, 40, 69);
+    color: black;
+}
+.logo1{
+    margin-left: 52px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top:19px;
+    color: black;
+}
+.nav-bar{
+    padding: 0px;
+  
+}
+        

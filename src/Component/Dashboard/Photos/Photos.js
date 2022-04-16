@@ -1,4 +1,5 @@
 import React from 'react'
+import Mainnav from '../../Mainnav'
 import './PhotosSep'
 import PhotosSep from './PhotosSep'
 function Photos() {
@@ -6,6 +7,7 @@ function Photos() {
   return (
    <>
          <div className="Bookmark">
+            <Mainnav/>
         <div className="back-color"> </div>
         <div className="container ">
           <div className="row main-cont"> 
@@ -62,6 +64,7 @@ function Photos() {
              </div>
           </div>
         </div>
+        <Footer/>
       </div>
    </>
   )

@@ -13,13 +13,13 @@ function Login() {
 
   
   const loginClick = async() => {
-    let reqUrl = `https://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/user/${email}/signin`
+    let reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/user/${email}/signin`
     await axios.post(reqUrl , {"password":passsword})
       .then( ( res) => {
         if(res.data.isSuccess == true){
           console.log(res);
           alert("login successful !!")
-          navigate("/user/dashboard")
+          navigate("/user/bookmark")
         }else{
           alert("Invalid Credentials !!")
         }
@@ -77,7 +77,7 @@ function Login() {
                    </div>
                    </div>
 
-                   <button onClick={loginClick} className="log-log">
+                   <button type="button" onClick={loginClick} className="log-log">
                     Login to Viewmo 
                      </button>
                    <div className="log-new1">

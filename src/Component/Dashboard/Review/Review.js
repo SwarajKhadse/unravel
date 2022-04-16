@@ -80,11 +80,6 @@ function Review() {
 
                <div className='Review-card'><AboutReview /></div>
                </div>
-        
-
-
-
-
              </div>
           </div>
         </div>

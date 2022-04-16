@@ -10,21 +10,21 @@ export default function ShopCard(props) {
                 <img  src='./assets/background.jpg' className='user-img' />
                 </div>
                 <div>
-                  <StarRating/>
+                  <StarRating rating={props.reviewData.ratingStar}/>
                 </div>
             </div>
 
             <div className='container text-left'>
               <br />
-              <b>Jhon Doe</b> review <br/>
-              <span className='exp'> <b>"Great Experience"</b></span> <br/> <br />
+              <b>{props.reviewData.businessName}</b> review <br/>
+              <span className='exp'> <b>"{props.reviewData.message}"</b></span> <br/> <br />
               <p>I really liked the place ce lot as it
 covered all the things I wanted
 </p>
             </div> 
 
             <div className='abc m-2'>
-              <p className='date'>Published : 26 February 2022</p>
+              <p className='date'>Published : {props.reviewData.createdDate}</p>
               
               <button type="button" class="btn btn-primary xyz read-butt">Read Reviews</button>
             </div>

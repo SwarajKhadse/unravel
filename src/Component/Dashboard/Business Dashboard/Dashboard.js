@@ -2,6 +2,7 @@ import React ,{useState ,useEffect} from 'react'
 import './Dashboard.css'
 import { Link ,Routes,Route} from "react-router-dom";
 import axios from 'axios';
+import Mainnav from '../../Mainnav';
 
 function Dashboard() {
 
@@ -55,6 +56,7 @@ function Dashboard() {
   return (
    <>
          <div className="Bookmark">
+           <Mainnav/>
         <div className="back-color"> </div>
         <div className="container ">
           <div className="row main-cont"> 
@@ -158,6 +160,7 @@ function Dashboard() {
              </div>
           </div>
         </div>
+      <Footer/>
       </div>
    
    </>

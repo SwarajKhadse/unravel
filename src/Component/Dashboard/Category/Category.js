@@ -1,4 +1,5 @@
 import React from 'react'
+import Mainnav from '../../Mainnav';
 import './Category.css'
 import Categorysub from './Categorysub'
 function Category() {
@@ -6,6 +7,7 @@ function Category() {
   return (
    <>
           <div className="Bookmark">
+            <Mainnav/>
         <div className="back-color"> </div>
         <div className="container ">
           <div className="row main-cont"> 
@@ -58,6 +60,7 @@ function Category() {
              </div>
           </div>
         </div>
+    <Footer/>
       </div>
    
    </>

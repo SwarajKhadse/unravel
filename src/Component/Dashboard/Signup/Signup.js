@@ -150,10 +150,10 @@ function Signup() {
                 </div>
               </div>
 
-              <button type="button" onClick={signUp} className="log-log">
-                 {/* <Link to="/login" className="butt">Register Now!</Link>  */}
-                 
-Register Now              </button>
+             
+                 <Link to="/user/dashboard" className="butt"> <button type="button" onClick={signUp} className="log-log">Register as User     </button></Link> 
+                 <Link to="/dash/business" className="butt"> <button type="button" onClick={signUp} className="log-log">Register as Business Owner     </button></Link> 
+                
               <div className="log-new1">
                 <span className="log-new">Already have an account </span>
                 <a href="#" className="fw-bold ">

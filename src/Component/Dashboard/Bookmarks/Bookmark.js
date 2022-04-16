@@ -2,10 +2,14 @@ import React from "react";
 import "./Bookmark.css";
 import Rating from "./Rating";
 import { Link ,Routes,Route} from "react-router-dom";
+import Footer from './../../Footer'
+import Mainnav from "../../Mainnav";
 function Bookmark() {
   return (
     <>
+
       <div className="Bookmark">
+        <Mainnav/>
         <div className="back-color"> </div>
         <div className="container ">
           <div className="row main-cont"> 
@@ -18,7 +22,7 @@ function Bookmark() {
                     <h6 className="mb-0 mt-3 hello">Hello,</h6>
                     <h6 className="fw-bold user-name">Jessica Albertoz </h6>
                     </div>
-                    
+                
                  </div>
                  <div  className="container list-cont ">
                    <div className="list-book mb-3 mt-3 ml-3  list-book "><span className="fw-bold "><Link to="/user/bookmark">Bookmarks</Link></span></div>
@@ -40,6 +44,7 @@ function Bookmark() {
              </div>
           </div>
         </div>
+       <Footer/>
         <br /><br /><br /><br /><br /><br />
       </div>
     </>

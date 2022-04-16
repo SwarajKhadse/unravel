@@ -12,10 +12,11 @@ import Business from './Component/Dashboard/BusinessNew/Business';
 import Dashboard from './Component/Dashboard/Business Dashboard/Dashboard';
 import Photos from './Component/Dashboard/Photos/Photos'
 import Category from './Component/Dashboard/Category/Category';
-import AboutBody from  './Component/about/AboutBody/AboutBody'
-
 // import Business from './Component/Dashboard/BusinessNew/Business';
+import AboutBody from './Component/about/AboutBody/AboutBody'
+
 import Home from './Home';
+import Mainnav from './Component/Mainnav';
 function App(){
     
 
@@ -41,15 +42,13 @@ function App(){
                   </Route>
                   <Route path="dash">
                    {/* <Route index element={<Dashboard/>}/> */}
-                   <Route path="bookmark" element={<Dashboard/>}/>
+                   <Route path="dashboard" element={<Dashboard/>}/>
                    <Route path="review" element={<ReviewsB/>}/>
                    <Route path="photos" element={<Photos/>}/>
                    <Route path="category" element={<Category/>}/>
                    <Route path="business" element={<Business/>}/>
                    <Route path="about" element={<AboutBody/>}/>
-                   <Route path="business" element={<Business/>}/>
                   </Route>
-     
       </Routes>
     </BrowserRouter>
        

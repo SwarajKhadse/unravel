@@ -1,10 +1,13 @@
 import React from 'react'
 import './ReviewsB.css'
 import Comment from './Comment.js'
+import Mainnav from '../../Mainnav'
+import Footer from '../../Footer'
 function ReviewsB() {
   return (
     <>
            <div className="Bookmark">
+             <Mainnav/>
         <div className="back-color"> </div>
         <div className="container ">
           <div className="row main-cont"> 
@@ -44,6 +47,7 @@ function ReviewsB() {
              </div>
           </div>
         </div>
+      <Footer/>
       </div>
    
     </>
