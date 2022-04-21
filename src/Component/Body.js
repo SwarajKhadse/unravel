@@ -6,13 +6,14 @@ import axios from "axios";
 import "./body.css";
 
 function Body() {
+  const [buisnessData , setBuisnessData] = useState([]);
   const firstRow = [
     "Clothing store ADC",
     "Vegetable store ADC",
     "Coffee store ADC",
   ];
   const secondRow = ["FastFood store ADC", "Cloth store ADC", "Food store ADC"];
-  const [buisnessData, setBuisnessData] = useState([]);
+ 
 
   const getBuisnessData = async () => {
     const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/best-businesses/category`;

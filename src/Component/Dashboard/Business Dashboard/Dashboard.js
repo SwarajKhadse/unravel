@@ -3,7 +3,7 @@ import './Dashboard.css'
 import { Link ,Routes,Route} from "react-router-dom";
 import axios from 'axios';
 import Mainnav from '../../Mainnav';
-
+import Footer from '../../Footer';
 function Dashboard() {
 
    const getReviewsData = async () => {

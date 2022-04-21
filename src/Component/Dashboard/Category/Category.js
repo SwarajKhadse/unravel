@@ -2,8 +2,18 @@ import React from 'react'
 import Mainnav from '../../Mainnav';
 import './Category.css'
 import Categorysub from './Categorysub'
+import Footer from '../../Footer';
+import axios from 'axios';
 function Category() {
   const cat=['Software Developement','Website Developement','Social Media Developement','custom LMS support','E-commerce Website Develop','Education Consultancy'];
+  try{
+    const res = axios.get('Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/categories/');
+    console.log(res)
+  }catch(err){
+    console.log(err);
+  }
+  
+  
   return (
    <>
           <div className="Bookmark">

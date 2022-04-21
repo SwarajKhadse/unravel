@@ -1,10 +1,31 @@
-import React from "react";
+import React ,{useState,useEffect} from "react";
 import "./Bookmark.css";
 import Rating from "./Rating";
 import { Link ,Routes,Route} from "react-router-dom";
 import Footer from './../../Footer'
-import Mainnav from "../../Mainnav";
+import Mainnav from "../../Mainnav"
+import axios from 'axios'
 function Bookmark() {
+  const [book, setBook] = useState([]);
+  const getBook = async () => {
+    const reqUrl = `Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/reaction/hasmarita@gmail.com/businesses`
+    await axios
+      .get(reqUrl)
+      .then((res) => {
+        if (res.data.isSuccess == true) {
+          console.log(res.data, "res.data.re");
+          // alert("User Registered successFully")
+          setBook(res.data.data);
+        } else {
+          alert(res.data.message);
+        }
+      })
+      .then((err) => {
+        // toast.error(err)
+        console.log(err);
+      });
+  };
+
   return (
     <>
 
@@ -12,7 +33,7 @@ function Bookmark() {
         <Mainnav/>
         <div className="back-color"> </div>
         <div className="container ">
-          <div className="row main-cont"> 
+       x   <div className="row main-cont"> 
              <div className="col-md-3 Book1">
                  <div className="container row pqr top-padding">
                     <div className=" col-4 user-logo">
