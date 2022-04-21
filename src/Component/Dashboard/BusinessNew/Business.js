@@ -50,6 +50,7 @@ function Business() {
       createdDate: "2021-10-15T17:17:40.366Z",
       modifiedBy: "2021-12-27T06:18:23.413895Z",
       ratingSum: 15,
+
       reviewCount: 4,
       headerUrl: [
         "https://unraveldisplayimage.s3.ap-south-1.amazonaws.com/suganda.co1.jpg",
@@ -60,7 +61,6 @@ function Business() {
       ratingAverage: 3,
       explore: false,
     };
-
     console.log("i am here...");
     console.log(count, "count");
     await axios
@@ -305,6 +305,7 @@ function Business() {
                   <option value="access">Accessories</option>
                   <option value="giftsAndMore">Gifts & More</option>
                 </select>
+              
                 {/* <div>
                   <label htmlFor="banner">upload banner image   </label>
                   <input type="file" name="banner" className="mt-3 " id="banner" onChange={(e) => { setBanner(e.target.files[0]) }} />

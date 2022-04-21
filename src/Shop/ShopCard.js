@@ -11,7 +11,6 @@ export default function ShopCard(props) {
       }}>
         <h5 className='card-title'>{props.title}</h5>
       </div>
-
     </div>
   )
 }

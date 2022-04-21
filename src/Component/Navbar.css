@@ -6,7 +6,6 @@
     justify-content: end;
     align-items: flex-end;
 }
-
 .butt-login{
     background-color: rgb(45, 123, 224);
     color: white;
@@ -146,7 +145,8 @@ border: none;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
+    
     margin-top: 20px;
 }
 .but-home{

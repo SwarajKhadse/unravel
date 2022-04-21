@@ -8,7 +8,7 @@ function PhotosSep({title  }) {
   return (
     <>
 
-  <img src={title} alt="imge" ></img>
+  <img src="https://unravel-webapp.s3.amazonaws.com/3761ce79-7501-46cb-840d-8cfccfd10678/th.jpg" className='img-maha' />
   {/* <h1>{id}</h1>
   <div className='group-img'>
   <div className='card-body'
@@ -19,6 +19,7 @@ function PhotosSep({title  }) {
       }}></div>
   
   </div> */}
+  
     
     </>
   )

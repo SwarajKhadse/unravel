@@ -33,6 +33,7 @@ function Navbar() {
     <>
       {/* main body */}
       <div className="back-img main-body">
+       
         {/* nav bar start */}
         <div className="bg-img">
           <nav className="navbar navbar-expand-lg navbar-dark nav-bar">

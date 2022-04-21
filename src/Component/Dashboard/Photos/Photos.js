@@ -97,7 +97,7 @@ function Photos() {
               <div className="row">
                 {photos.map((data) => {
                   return (
-                    <div className="col-md-4 border border-danger">
+                    <div className="col-md-4 ">
                       {/* <h1>{data.imagePath}</h1> */}
                       <PhotosSep title={data.imagePath} />
                     </div>

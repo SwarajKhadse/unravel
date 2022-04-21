@@ -29,6 +29,7 @@ function Body() {
         } else {
           alert(res.data.message);
         }
+        
       })
       .then((err) => {
         // toast.error(err)
