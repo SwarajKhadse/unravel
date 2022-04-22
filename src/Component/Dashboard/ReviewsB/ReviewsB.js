@@ -1,9 +1,37 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './ReviewsB.css'
 import Comment from './Comment.js'
 import Mainnav from '../../Mainnav'
 import Footer from '../../Footer'
+import axios from 'axios'
 function ReviewsB() {
+  const [redashData, setRedashData] = useState([]);
+  const getRedashData = async () => {
+    const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/review/user/{user id}`;
+    await axios
+      .get(reqUrl)
+      .then((res) => {
+        if (res.data.isSuccess == true) {
+          console.log(res.data, "res.data.re");
+          // alert("User Registered successFully")
+          setRedashData(res.data.data);
+        } else {
+          alert(res.data.message);
+        }
+      })
+      .then((err) => {
+        // toast.error(err)
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getRedashData();
+  }, [])
+
+
+
+
   return (
     <>
            <div className="Bookmark">
@@ -37,11 +65,17 @@ function ReviewsB() {
                    <div>
                          <h2 className="fw-bold mt-3 pqr">Reviews</h2>
                          <div className='mt-3 mb-3'>
-                        <Comment/>
+                         {
+                    redashData.map((data) => {
+                          return (
+                            <div className='col-md-12'>
+                              <Comment redashData={data}/>
+                            </div>
+                          )
+                        })
+}
                         </div>
-                        <div className='mt-3 mb-3'>
-                        <Comment/>
-                        </div>  
+                        
                    </div>
 
              </div>

@@ -11,7 +11,7 @@ function Add() {
                 onChange={(event) => {
                   setAdd1(event.target.value)
                 }}
-                placeholder="Enter your adress"
+                placeholder="Enter your adreess"
               />
     </>
   )

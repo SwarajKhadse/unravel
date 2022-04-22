@@ -22,7 +22,12 @@ function Photos() {
         if (res.data.isSuccess == true) {
           console.log(res.data.imagePath, "res.data");
           setPhotos(res.data.data);
-          // alert("User Registered successFully")
+          let s1=res.imagePath;
+          let s2=res.imageFileName;
+          let s3
+          s3=s1+s2;
+          console.log(s3)
+          // al1e1rt("User Registered successFully")
         } else {
           alert(res.data.message);
         }
@@ -48,7 +53,7 @@ function Photos() {
               <div className="container row pqr">
                 <div className=" col-md-4 user-logo">
                   <h1 className="text-center mt-2 pt-1 fw-bold user-initial">
-                    J
+                    M
                   </h1>
                 </div>
                 <div className="col-md-6 ">

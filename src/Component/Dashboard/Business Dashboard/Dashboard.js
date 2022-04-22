@@ -6,29 +6,29 @@ import Mainnav from '../../Mainnav';
 import Footer from '../../Footer';
 function Dashboard() {
 
-   const getReviewsData = async () => {
-      const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/review/user/khadseswaraj@gmail.com`;
+  //  const getReviewsData = async () => {
+  //     const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/review/user/khadseswaraj@gmail.com`;
   
-      await axios
-        .get(reqUrl)
-        .then((res) => {
-          if (res.data.isSuccess == true) {
-            console.log(res);
-            console.log(res.data, "res.data");
-            console.log(res.data.data, "res.data.data");
-            // alert("User Registered successFully")
-          } else {
-            alert(res.data.message);
-          }
-        })
-        .then((err) => {
-          // toast.error(err)
-          console.log(err);
-        });
-    };
+  //     await axios
+  //       .get(reqUrl)
+  //       .then((res) => {
+  //         if (res.data.isSuccess == true) {
+  //           console.log(res);
+  //           console.log(res.data, "res.data");
+  //           console.log(res.data.data, "res.data.data");
+  //           // alert("User Registered successFully")
+  //         } else {
+  //           alert(res.data.message);
+  //         }
+  //       })
+  //       .then((err) => {
+  //         // toast.error(err)
+  //         console.log(err);
+  //       });
+  //   };
 
     const getBuisnessData = async () => {
-      const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/reaction/hasmarita@gmail.com/businesses`;
+      const reqUrl = `http://unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/616b2d4e7e382a3d90882beb`;
   
       await axios
         .get(reqUrl)
@@ -50,7 +50,7 @@ function Dashboard() {
 
     useEffect(() => {
       getBuisnessData();
-      getReviewsData();
+      
     }, [])
     
   return (
@@ -88,7 +88,7 @@ function Dashboard() {
                    </div>
                    <div className="d-flex Book-Rev">
                       <p className='token'>Name</p>
-                      <h5>ABC Business Store</h5>
+                      <h5>{name}</h5>
                       <p className='token'>Address Line 1</p>
                       <h5>52, 13 floor, ABC Avenue</h5>
                       <p className='token'>Address Line 2</p>

@@ -6,10 +6,6 @@ import Dashboard from "../Business Dashboard/Dashboard";
 import Add from "./Add";
 import { render } from "react-dom";
 
-const setTimeout = () => {
-  alert("hiii");
-  return <h1>these is called</h1>;
-};
 
 function Business() {
   const [name, setName] = useState();
@@ -23,9 +19,14 @@ function Business() {
   const [num, setNum] = useState();
   const [web, setWeb] = useState();
   const [email, setEmail] = useState();
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState([]);
  
+  // var valSel = new Array();
 
+  // function setCategory(sel) {
+    
+  //     category.push(objSel.value);
+  // }
   // const [banner, setBanner] = useState([])
   // const [img1, setImg1] = useState([])
   // const [img2, setImg2] = useState([])
@@ -105,7 +106,7 @@ function Business() {
               placeholder="your business name"
             />
 
-            <label for="bussDetail ">Enter about your business</label>
+            {/* <label for="bussDetail ">Enter about your business</label>
             <input
               type="text"
               className="form-control"
@@ -114,7 +115,7 @@ function Business() {
                 setDetail(event.target.value);
               }}
               placeholder="small description about your business"
-            />
+            /> */}
 
             <div className="form-group"></div>
             <div className="form-group">
@@ -128,8 +129,18 @@ function Business() {
                 }}
                 placeholder="Enter your adress"
               />
+               <label for="bussAdd1">Address 2</label>
+              <input
+                type="text"
+                className="form-control"
+                id="bussAdd1"
+                onChange={(event) => {
+                  setAdd2(event.target.value);
+                }}
+                placeholder="Enter your another adress"
+              />
             </div>
-            <button
+            {/* <button
               type="button"
               onClick={() => {
                 setAdd([...add, add1]);
@@ -137,66 +148,28 @@ function Business() {
               class="btn btn-primary"
             >
               Add
+            </button> */}
+             <button
+              type="button"
+              onClick={() => {
+                setCount(count + 1);
+              }}
+              className="btn btn-primary" 
+            >
+              <span className="abcd">  Add another address</span>
+            
             </button>
+
             <button
               type="button"
               onClick={() => {
                 setCount(count - 1);
               }}
-              class="btn btn-warning"
+              className="btn  btn-1 btn-danger"
             >
               Remove
             </button>
-            <button
-              type="button"
-              onClick={() => {
-                setCount(count + 1);
-              }}
-              class="btn btn-primary"
-            >
-              Add another address
-            </button>
-            {[...Array(count)].map((i) => {
-              return (
-                <>
-                  <div className="form-group">
-                    <label for="bussAdd1">Address 1</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="bussAdd1"
-                      onChange={(event) => {
-                        setAdd1(event.target.value);
-                      }}
-                      placeholder="Enter your adress"
-                    />
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setAdd([...add, add1]);
-                    }}
-                    class="btn btn-primary"
-                  >
-                    Add
-                  </button>
-                </>
-              );
-            })}
-            {/* <div className="form-group">
-              <label for="bussAdd2">Address 2</label>
-              <input
-                type="text"
-                className="form-control"
-                id="bussAdd2"
-                onChange={(event) => {
-                  setAdd2(event.target.value);
-                }}
-                placeholder="Enter your other adress "
-              />
-            </div>
-            <button onClick={setTimeout}>add</button>
- */}
+           
             <div className="row d-flex">
               <div className="col-5">
                 <div className="form-group">
@@ -239,7 +212,80 @@ function Business() {
                     placeholder="00000"
                   />
                 </div>
-              </div>
+              </div>  
+
+
+            {[...Array(count)].map((i) => {
+              return (
+                <>
+
+                
+                  <div className="form-group d-flex row  ">
+                    <div className="col-5">
+                    <label for="bussAdd1" className="mr-3">City</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="bussCity"
+                      onChange={(event) => {
+                        setCity(event.target.value);
+                      }}
+                      placeholder="Enter your city"
+                    />
+                    </div>
+                    <div className="col-4">
+                     <label for="bussAdd1">State</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="bussState"
+                      onChange={(event) => {
+                        setState(event.target.value);
+                      }}
+                      placeholder="Enter your state"
+                    />
+                    </div>
+                    <div className="col-3">
+                     <label for="bussAdd1">Zip</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="bussZip"
+                      onChange={(event) => {
+                        setZip(event.target.value);
+                      }}
+                      placeholder=" 00000"
+                    />
+                    </div>
+                  </div>
+                  
+                  {/* <button
+                    type="button"
+                    onClick={() => {
+                      setAdd([...add, add1]);
+                    }}
+                    class="btn btn-primary"
+                  >
+                    Add
+                  </button> */}
+                </>
+              );
+            })}
+            {/* <div className="form-group">
+              <label for="bussAdd2">Address 2</label>
+              <input
+                type="text"
+                className="form-control"
+                id="bussAdd2"
+                onChange={(event) => {
+                  setAdd2(event.target.value);
+                }}
+                placeholder="Enter your other adress "
+              />
+            </div>
+            <button onClick={setTimeout}>add</button>
+ */}
+
 
               <div className="form-group">
                 {/* <label for="bussLoc">Enter Google map location link</label>
@@ -294,7 +340,7 @@ function Business() {
                 <select
                   className="custom-select w-100 mt-2"
                   onChange={(e) => {
-                    setCategory(e.target.value);
+                    setCategory(...category ,e.target.value);
                   }}
                 >
                   <option value='bakery' selected>Bakery</option>
@@ -321,7 +367,7 @@ function Business() {
               </div>
               <button
                 type="button"
-                className="btn btn-primary mb-3 "
+                className="btn btn-primary btn2"
                 onClick={registerMeNew}
               >
                 Register
@@ -329,6 +375,7 @@ function Business() {
             </div>
           </div>
           <div className="col-md-5"></div>
+        
         </div>
       </div>
     </>

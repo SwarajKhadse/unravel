@@ -8,8 +8,11 @@ export default function ShopCard(props) {
         backgroundImage: `url(${props.thumbnailUrl})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize:"100% 100%"
+        
       }}>
+        <div className='img-rev'>
         <h5 className='card-title'>{props.title}</h5>
+        </div>
       </div>
     </div>
   )
