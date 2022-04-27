@@ -13,7 +13,7 @@ function Rating(props) {
         </div>
 
         <div className="col-md-4">
-          <h4>{props.bookmarkData.name}</h4>
+          <h4></h4>
         </div>
 
         <div className="col-md-5">

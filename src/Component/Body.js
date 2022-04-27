@@ -92,9 +92,10 @@ function Body() {
 
             {buisnessData ? 
               buisnessData.map((data) => {
+              console.log(data.thumbnailUrl);
                 return (
                   <div className="col-md-4 mt-3">
-                    <ShopCard title={data.name} thumbnailUrl={data.thumbnailUrl} />
+                    <ShopCard title={data.name} thumbnailUrl={data.thumbnailUrl} headerUrl = {data.headerUrl} />
                   </div>
                 )
               })

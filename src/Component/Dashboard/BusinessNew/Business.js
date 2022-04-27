@@ -1,4 +1,4 @@
-import React, { useState, useEffect,Component} from "react";
+import React, { useState, useEffect, Component } from "react";
 
 import "./Business.css";
 import axios from "axios";
@@ -6,7 +6,7 @@ import Bookmark from "./../Bookmarks/Bookmark";
 import Dashboard from "../Business Dashboard/Dashboard";
 import Add from "./Add";
 import { render } from "react-dom";
-import Select from 'react-select'
+import Select from "react-select";
 import makeAnimated from "react-select/animated";
 
 function Business() {
@@ -22,39 +22,41 @@ function Business() {
   const [web, setWeb] = useState();
   const [email, setEmail] = useState();
   const [category, setCategory] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
+
+
   let newArray;
   const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" },
+  ];
   const animatedComponents = makeAnimated();
   const colorOptions = [
     { value: "Red", label: "Red" },
     { value: "Green", label: "Green" },
     { value: "Blue", label: "Blue" },
-    { value: "Pink", label: "Pink" }
+    { value: "Pink", label: "Pink" },
   ];
-newArray = category.concat();
-newArray = [...category, category];
+  newArray = category.concat();
+  newArray = [...category, category];
 
+  const [selectedFlavors, setSelectedFlavors] = useState([]);
 
-const [selectedFlavors, setSelectedFlavors] = useState([]);
-
-const handleSelect = function(selectedItems) {
+  const handleSelect = function (selectedItems) {
     const flavors = [];
-    for (let i=0; i<selectedItems.length; i++) {
-        flavors.push(selectedItems[i].value);
+    for (let i = 0; i < selectedItems.length; i++) {
+      flavors.push(selectedItems[i].value);
     }
 
     setSelectedFlavors(flavors);
-}
-console.log('these is selected flowers' + selectedFlavors)
-console.log("the value of category selected is" + isMultioptions)
+  };
+  // console.log('these is selected flowers' + selectedFlavors)
+  // console.log("the value of category selected is" + isMultioptions)
   // var valSel = new Array();
 
   // function setCategory(sel) {
-    
+
   //     category.push(objSel.value);
   // }
   // const [banner, setBanner] = useState([])
@@ -62,6 +64,9 @@ console.log("the value of category selected is" + isMultioptions)
   // const [img2, setImg2] = useState([])
 
   // const [add, setAdd] = useState([]);
+  const handelChange = (i) => {
+    console.log("these is the value i" + i);
+  };
   const [count, setCount] = useState(0);
   const registerMeNew = async () => {
     let reqUrl =
@@ -72,7 +77,7 @@ console.log("the value of category selected is" + isMultioptions)
     let body = {
       categories: [newArray],
       instagram: "suganda.co",
-      address: add1, // string array 
+      address: add1, // string array
       name: name,
       contact: num,
       serviceLocation: [state],
@@ -112,11 +117,11 @@ console.log("the value of category selected is" + isMultioptions)
         console.error(err);
         console.log(err);
       });
-
   };
 
-  console.log("address",  add1);
+  console.log("address", add1);
   console.log("these is category", category);
+// console.log('these is selected options ' +selectedOption)
   return (
     <>
       {/* <Dashboard data/> */}
@@ -159,7 +164,7 @@ console.log("the value of category selected is" + isMultioptions)
                 }}
                 placeholder="Enter your adress"
               />
-               <label for="bussAdd1">Address 2</label>
+              <label for="bussAdd1">Address 2</label>
               <input
                 type="text"
                 className="form-control"
@@ -179,15 +184,14 @@ console.log("the value of category selected is" + isMultioptions)
             >
               Add
             </button> */}
-             <button
+            <button
               type="button"
               onClick={() => {
                 setCount(count + 1);
               }}
-              className="btn btn-primary" 
+              className="btn btn-primary"
             >
-              <span className="abcd">  Add another address</span>
-            
+              <span className="abcd"> Add another address</span>
             </button>
 
             <button
@@ -199,7 +203,7 @@ console.log("the value of category selected is" + isMultioptions)
             >
               Remove
             </button>
-           
+
             <div className="row d-flex">
               <div className="col-5">
                 <div className="form-group">
@@ -242,54 +246,53 @@ console.log("the value of category selected is" + isMultioptions)
                     placeholder="00000"
                   />
                 </div>
-              </div>  
+              </div>
 
+              {[...Array(count)].map((i) => {
+                return (
+                  <>
+                    <div className="form-group d-flex row  ">
+                      <div className="col-5">
+                        <label for="bussAdd1" className="mr-3">
+                          City
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="bussCity"
+                          onChange={(event) => {
+                            setCity(event.target.value);
+                          }}
+                          placeholder="Enter your city"
+                        />
+                      </div>
+                      <div className="col-4">
+                        <label for="bussAdd1">State</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="bussState"
+                          onChange={(event) => {
+                            setState(event.target.value);
+                          }}
+                          placeholder="Enter your state"
+                        />
+                      </div>
+                      <div className="col-3">
+                        <label for="bussAdd1">Zip</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="bussZip"
+                          onChange={(event) => {
+                            setZip(event.target.value);
+                          }}
+                          placeholder=" 00000"
+                        />
+                      </div>
+                    </div>
 
-            {[...Array(count)].map((i) => {
-              return (
-                <>
-
-                
-                  <div className="form-group d-flex row  ">
-                    <div className="col-5">
-                    <label for="bussAdd1" className="mr-3">City</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="bussCity"
-                      onChange={(event) => {
-                        setCity(event.target.value);
-                      }}
-                      placeholder="Enter your city"
-                    />
-                    </div>
-                    <div className="col-4">
-                     <label for="bussAdd1">State</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="bussState"
-                      onChange={(event) => {
-                        setState(event.target.value);
-                      }}
-                      placeholder="Enter your state"
-                    />
-                    </div>
-                    <div className="col-3">
-                     <label for="bussAdd1">Zip</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="bussZip"
-                      onChange={(event) => {
-                        setZip(event.target.value);
-                      }}
-                      placeholder=" 00000"
-                    />
-                    </div>
-                  </div>
-                  
-                  {/* <button
+                    {/* <button
                     type="button"
                     onClick={() => {
                       setAdd([...add, add1]);
@@ -298,10 +301,10 @@ console.log("the value of category selected is" + isMultioptions)
                   >
                     Add
                   </button> */}
-                </>
-              );
-            })}
-            {/* <div className="form-group">
+                  </>
+                );
+              })}
+              {/* <div className="form-group">
               <label for="bussAdd2">Address 2</label>
               <input
                 type="text"
@@ -315,7 +318,6 @@ console.log("the value of category selected is" + isMultioptions)
             </div>
             <button onClick={setTimeout}>add</button>
  */}
-
 
               <div className="form-group">
                 {/* <label for="bussLoc">Enter Google map location link</label>
@@ -364,18 +366,29 @@ console.log("the value of category selected is" + isMultioptions)
                   placeholder="example@gmail.com"
                 />
               </div>
+              {/* <Select
+                closeMenuOnSelect={false}
+                components={animatedComponents}
+                defaultValue={[colorOptions[4], colorOptions[5]]}
+                isMulti
+                options={colorOptions}
+                value={(e) => {
+                  handelChange(e.target.value);
+                }}
+              /> */}
               <Select
-                  closeMenuOnSelect={false}
-                  components={animatedComponents}
-                  defaultValue={[colorOptions[4], colorOptions[5]]}
-                  isMultioptions={colorOptions}
-               
-                />
+                defaultValue={selectedOption}
+                onChange={(e)=>{
+                  setSelectedOption(e.target.value)}}
+                // value={(e)=>{setSelectedOption(e.target.value)}}
+                isMulti
+                options={options}
+
+              />
 
               <div className="input-group w-100 mb-3 mt-3">
                 Select your Category
-                <Select options={options} />
-
+                {/* <Select options={options} /> */}
                 {/* <select multiple={true} value={selectedFlavors} onChange={(e)=> {handleSelect(e.target.selectedOptions)}}>
                 <option value="grapefruit">Grapefruit</option>
                 <option value="lime">Lime</option>
@@ -421,7 +434,6 @@ console.log("the value of category selected is" + isMultioptions)
             </div>
           </div>
           <div className="col-md-5"></div>
-        
         </div>
       </div>
     </>

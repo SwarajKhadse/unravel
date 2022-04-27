@@ -94,6 +94,9 @@ const addPhotos = async () => {
       console.error(err);
       console.log(err);
     });
+    //  useEffect(() => {
+  //    addPhotos();
+  //  }, []);
 
 };
 
@@ -102,9 +105,7 @@ const addPhotos = async () => {
 
 
 
-  //  useEffect(() => {
-  //    getBuisnessData();
-  //  }, []);
+  
   console.log(photos);
   return (
     <>

@@ -19,7 +19,7 @@ function Bookmark() {
           console.log(res.data.data, "res.data.data");
           setBookmarkData(res.data.data);
         
-         console.log("kagaz"+bookmarkData)
+         console.log("kagaz" + bookmarkData)
           // alert("User Registered successFully")
         } else {
           alert(res.data.message);
@@ -30,19 +30,16 @@ function Bookmark() {
         console.log(err);
       });
   };
-
   useEffect(() => {
     getBookmarkData();
-    
   }, [])
   return (
     <>
-
       <div className="Bookmark">
         <Mainnav/>
         <div className="back-color"> </div>
         <div className="container ">
-       x   <div className="row main-cont"> 
+            <div className="row main-cont"> 
              <div className="col-md-3 Book1">
                  <div className="container row pqr top-padding">
                     <div className=" col-4 user-logo">
