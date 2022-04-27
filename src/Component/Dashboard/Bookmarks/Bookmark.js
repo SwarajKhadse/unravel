@@ -6,16 +6,21 @@ import Footer from './../../Footer'
 import Mainnav from "../../Mainnav"
 import axios from 'axios'
 function Bookmark() {
-  const [book, setBook] = useState([]);
-  const getBook = async () => {
-    const reqUrl = `Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/reaction/hasmarita@gmail.com/businesses`
+  const [bookmarkData,setBookmarkData] = useState([])
+   
+  const getBookmarkData = async () => {
+    const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/reaction/shivasinghal123@gmail.com/businesses`;
     await axios
       .get(reqUrl)
       .then((res) => {
         if (res.data.isSuccess == true) {
-          console.log(res.data, "res.data.re");
+          console.log(res);
+          console.log(res.data, "res.data.buisness");
+          console.log(res.data.data, "res.data.data");
+          setBookmarkData(res.data.data);
+        
+         console.log("kagaz"+bookmarkData)
           // alert("User Registered successFully")
-          setBook(res.data.data);
         } else {
           alert(res.data.message);
         }
@@ -26,6 +31,10 @@ function Bookmark() {
       });
   };
 
+  useEffect(() => {
+    getBookmarkData();
+    
+  }, [])
   return (
     <>
 
@@ -57,9 +66,15 @@ function Bookmark() {
                    </div>
                    <div className="d-flex Book-Rev text-center">
                    <div className="mt-3"><Rating/></div>
-                   <div className="mt-3"><Rating/></div>
-                   <div className="mt-3"><Rating/></div>
-                   <div className="mt-3"><Rating/></div>
+                   {
+                  bookmarkData.map((data) => {
+                          return (
+                            <div className='col-md-12'>
+                              <Rating bookmarkData={data}/>
+                            </div>
+                          )
+                        })
+}
                    
                    </div>
              </div>

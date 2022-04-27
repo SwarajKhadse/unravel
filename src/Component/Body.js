@@ -23,7 +23,7 @@ function Body() {
       .then((res) => {
         if (res.data.isSuccess == true) {
           // console.log(res);
-          console.log(res.data, "res.buisness.data");
+          console.log(res.data, "ye res hai...");
           setBuisnessData(res.data.data);
           // alert("User Registered successFully")
         } else {
@@ -37,12 +37,12 @@ function Body() {
       });
   };
 
-  console.log(buisnessData , " buisnessData");
+  console.log(buisnessData , " ye bussniness data hai..");
 
   
 
   const browseBuisnessByCat = async () => {
-    const reqUrl = `Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/business/{}`;
+    const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/business/{}`;
 
     await axios
       .get(reqUrl)
@@ -77,10 +77,10 @@ function Body() {
         <br />
         <br />
         <div className="container">
-          <h1 className="text-center sub-text ">
+          <h1 className="text-center ">
             Find the Best Businesses in Town
           </h1>
-          <h4 className="text-center sub-text">Famous shops</h4>
+          <h4 className="text-center ">Famous shops</h4>
           <div className="row">
             {/* {firstRow.map((title) => {
               return (
@@ -93,7 +93,7 @@ function Body() {
             {buisnessData ? 
               buisnessData.map((data) => {
                 return (
-                  <div className="col-md-4">
+                  <div className="col-md-4 mt-3">
                     <ShopCard title={data.name} thumbnailUrl={data.thumbnailUrl} />
                   </div>
                 )

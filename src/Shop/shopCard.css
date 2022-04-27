@@ -1,13 +1,29 @@
-.card-body{
-    /* background-image: url(./../assets/shop.jpg); */
-    border-radius: 10px;
+ .card-body{
+   
+    border-radius: 15px;
     height: 200px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.258);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.258);
     display: flex;
     flex-direction: column-reverse;
     color: black;
     width: 100%;
 }
+.card-main{
+    /* filter: brightness(70%); */
+    /* filter: drop-shadow(20px);
+    filter: ; */
+    box-shadow: 20px inset black;
+   border-radius: 15px ;
+   /* box-shadow: inset 5px 5px 5px 5px red; */
+
+}
+.card-title{
+font-weight: bold;
+
+}
 .img-rev{
+    margin-left: 0px;
+    margin-right: 0px;
    
 }
+

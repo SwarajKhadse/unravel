@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,Component} from "react";
+
 import "./Business.css";
 import axios from "axios";
 import Bookmark from "./../Bookmarks/Bookmark";
 import Dashboard from "../Business Dashboard/Dashboard";
 import Add from "./Add";
 import { render } from "react-dom";
-
+import Select from 'react-select'
+import makeAnimated from "react-select/animated";
 
 function Business() {
   const [name, setName] = useState();
@@ -20,7 +22,35 @@ function Business() {
   const [web, setWeb] = useState();
   const [email, setEmail] = useState();
   const [category, setCategory] = useState([]);
- 
+  let newArray;
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
+  const animatedComponents = makeAnimated();
+  const colorOptions = [
+    { value: "Red", label: "Red" },
+    { value: "Green", label: "Green" },
+    { value: "Blue", label: "Blue" },
+    { value: "Pink", label: "Pink" }
+  ];
+newArray = category.concat();
+newArray = [...category, category];
+
+
+const [selectedFlavors, setSelectedFlavors] = useState([]);
+
+const handleSelect = function(selectedItems) {
+    const flavors = [];
+    for (let i=0; i<selectedItems.length; i++) {
+        flavors.push(selectedItems[i].value);
+    }
+
+    setSelectedFlavors(flavors);
+}
+console.log('these is selected flowers' + selectedFlavors)
+console.log("the value of category selected is" + isMultioptions)
   // var valSel = new Array();
 
   // function setCategory(sel) {
@@ -31,7 +61,7 @@ function Business() {
   // const [img1, setImg1] = useState([])
   // const [img2, setImg2] = useState([])
 
-  const [add, setAdd] = useState([]);
+  // const [add, setAdd] = useState([]);
   const [count, setCount] = useState(0);
   const registerMeNew = async () => {
     let reqUrl =
@@ -40,9 +70,9 @@ function Business() {
     console.log("===>>>>>>>", num, add1, name);
 
     let body = {
-      categories: [category],
+      categories: [newArray],
       instagram: "suganda.co",
-      address: add, // string array 
+      address: add1, // string array 
       name: name,
       contact: num,
       serviceLocation: [state],
@@ -85,8 +115,8 @@ function Business() {
 
   };
 
-  console.log("address", add, add1);
-  console.log("cat", category);
+  console.log("address",  add1);
+  console.log("these is category", category);
   return (
     <>
       {/* <Dashboard data/> */}
@@ -334,11 +364,27 @@ function Business() {
                   placeholder="example@gmail.com"
                 />
               </div>
+              <Select
+                  closeMenuOnSelect={false}
+                  components={animatedComponents}
+                  defaultValue={[colorOptions[4], colorOptions[5]]}
+                  isMultioptions={colorOptions}
+               
+                />
 
               <div className="input-group w-100 mb-3 mt-3">
                 Select your Category
-                <select
+                <Select options={options} />
+
+                {/* <select multiple={true} value={selectedFlavors} onChange={(e)=> {handleSelect(e.target.selectedOptions)}}>
+                <option value="grapefruit">Grapefruit</option>
+                <option value="lime">Lime</option>
+                <option value="coconut">Coconut</option>
+                <option value="mango">Mango</option>
+            </select> */}
+                {/* <select
                   className="custom-select w-100 mt-2"
+                  multiple={true}
                   onChange={(e) => {
                     setCategory(...category ,e.target.value);
                   }}
@@ -351,7 +397,7 @@ function Business() {
                   <option value="access">Accessories</option>
                   <option value="giftsAndMore">Gifts & More</option>
                 </select>
-              
+               */}
                 {/* <div>
                   <label htmlFor="banner">upload banner image   </label>
                   <input type="file" name="banner" className="mt-3 " id="banner" onChange={(e) => { setBanner(e.target.files[0]) }} />

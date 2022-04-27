@@ -18,7 +18,7 @@ function AboutNavbar() {
       </div>
       </h4>
       </h1>
-</div>
+       </div>
     </div>
    
     </>

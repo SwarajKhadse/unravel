@@ -5,31 +5,10 @@ import axios from 'axios';
 import Mainnav from '../../Mainnav';
 import Footer from '../../Footer';
 function Dashboard() {
-
-  //  const getReviewsData = async () => {
-  //     const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/review/user/khadseswaraj@gmail.com`;
-  
-  //     await axios
-  //       .get(reqUrl)
-  //       .then((res) => {
-  //         if (res.data.isSuccess == true) {
-  //           console.log(res);
-  //           console.log(res.data, "res.data");
-  //           console.log(res.data.data, "res.data.data");
-  //           // alert("User Registered successFully")
-  //         } else {
-  //           alert(res.data.message);
-  //         }
-  //       })
-  //       .then((err) => {
-  //         // toast.error(err)
-  //         console.log(err);
-  //       });
-  //   };
-
+const [businessData,setBuisnessData] = useState([])
+   
     const getBuisnessData = async () => {
-      const reqUrl = `http://unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/616b2d4e7e382a3d90882beb`;
-  
+      const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/onlinebusiness/616b2d4e7e382a3d90882beb`;
       await axios
         .get(reqUrl)
         .then((res) => {
@@ -37,6 +16,9 @@ function Dashboard() {
             console.log(res);
             console.log(res.data, "res.data.buisness");
             console.log(res.data.data, "res.data.data");
+            setBuisnessData(res.data.data);
+          
+           console.log("kagaz"+businessData)
             // alert("User Registered successFully")
           } else {
             alert(res.data.message);
@@ -64,7 +46,7 @@ function Dashboard() {
                  <div className="container row pqr">
                      
                     <div className=" col-md-4 user-logo">
-                       <h1 className="text-center mt-2 pt-1 fw-bold user-initial">J</h1>
+                       <img src={businessData.thumbnailUrl} alt="name" className='user-image'/>
                     </div>
                     <div className="col-md-6 ">
                     <h6 className="mb-0 mt-3 hello">Hello,</h6>
@@ -88,20 +70,20 @@ function Dashboard() {
                    </div>
                    <div className="d-flex Book-Rev">
                       <p className='token'>Name</p>
-                      <h5>{name}</h5>
+                      <h5>{businessData.name}</h5>
                       <p className='token'>Address Line 1</p>
-                      <h5>52, 13 floor, ABC Avenue</h5>
-                      <p className='token'>Address Line 2</p>
-                      <h5>7 street, 26 lane</h5>
+                      <h5>{businessData.address}</h5>
+                      {/* <p className='token'>Address Line 2</p>
+                      <h5>7 street, 26 lane</h5> */}
                       <p className='token'>City</p>
                       <h5>New Delhi</h5>
                         <div className='pin'>
                            <div>
                       <p className='token'>Pincode</p>
-                      <h5>2xx2030</h5>
+                      <h5>000000</h5>
                       </div>
                       <div className='country'>
-                      <p className='token'>Country</p>
+                      <p className='token'>{businessData.serviceLocation}</p>
                       <h5>India</h5>
                       </div>
                       </div>
@@ -112,15 +94,19 @@ function Dashboard() {
                         <div className='col-md-4'>
                               <ul className='list1'>
                                  <li className='list1-cont'>
+                                   <input type="checkbox" name="check1" id="check1" />
                                  Offer Delivery
                                  </li>
                                  <li className='list1-cont'>
+                                 <input type="checkbox" name="check1" id="check1" />
                                  Outdoor seating
                                  </li>
                                  <li className='list1-cont'>
+                                 <input type="checkbox" name="check1" id="check1" />
                                  Less Noise Area
                                  </li>
                                  <li className='list1-cont'>
+                                 <input type="checkbox" name="check1" id="check1" />
                                  All staff wears mask
                                  </li>
                               </ul>
@@ -128,15 +114,19 @@ function Dashboard() {
                         <div className='col-md-4'>
                               <ul className='list1'>
                                  <li className='list1-cont'>
+                                 <input type="checkbox" name="check1" id="check1" />
                                  Awesome for working
                                  </li>
                                  <li className='list1-cont'>
+                                 <input type="checkbox" name="check1" id="check1" />
                                  Parking facility available
                                  </li>
                                  <li className='list1-cont'>
+                                 <input type="checkbox" name="check1" id="check1" />
                                  Masks required
                                  </li>
                                  <li className='list1-cont'>
+                                 <input type="checkbox" name="check1" id="check1" />
                                  Offers Takeout
 
                                  </li>
@@ -145,10 +135,12 @@ function Dashboard() {
                         <div className='col-md-4'>
                               <ul className='list1'>
                                  <li className='list1-cont'>
+                                 <input type="checkbox" name="check1" id="check1" />
                                  Staff vaccinated with covid-19 vaccine
 
                                  </li>
                                  <li className='list1-cont'>
+                                 <input type="checkbox" name="check1" id="check1" />
                                  Vaccination proof required
 
                                  </li>
@@ -168,3 +160,23 @@ function Dashboard() {
 }
 
 export default Dashboard
+  //  const getReviewsData = async () =>            {
+  //     const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/review/user/khadseswaraj@gmail.com`;
+  
+  //     await axios
+  //       .get(reqUrl)
+  //       .then((res) => {
+  //         if (res.data.isSuccess == true) {
+  //           console.log(res);
+  //           console.log(res.data, "res.data");
+  //           console.log(res.data.data, "res.data.data");
+  //           // alert("User Registered successFully")
+  //         } else {
+  //           alert(res.data.message);
+  //         }
+  //       })
+  //       .then((err) => {
+  //         // toast.error(err)
+  //         console.log(err);
+  //       });
+  //   };

@@ -2,7 +2,7 @@ import React from "react";
 import "./Rating.css";
 import StarRating from "../../../Reviews/StarRating";
 
-function Rating() {
+function Rating(props) {
   return (
     <>
       <div className="row">
@@ -13,7 +13,7 @@ function Rating() {
         </div>
 
         <div className="col-md-4">
-          <h4>Edison Coffee Shop</h4>
+          <h4>{props.bookmarkData.name}</h4>
         </div>
 
         <div className="col-md-5">

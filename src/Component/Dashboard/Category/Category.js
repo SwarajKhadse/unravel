@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Mainnav from '../../Mainnav';
 import './Category.css'
 import Categorysub from './Categorysub'
@@ -35,10 +36,10 @@ function Category() {
                  </div>
                  <div  className="container list-cont ">
                    <div className="list-book mb-2 mt-3 ml-3 list-book "><span className="fw-bold ">Dashboard</span></div>
-                   <div className="list-book mb-2 ml-3 list-book "><span className="fw-bold ">Business info</span></div>
-                   <div className="list-book mb-2 ml-3 list-book "><span className="fw-bold ">Reviews</span></div>
-                   <div className="list-book mb-2 ml-3 list-book "><span className="fw-bold ">Photos</span></div>
-                   <div className="list-book mb-2 ml-3 list-book "><span className="fw-bold ">Category</span></div>
+                   <div className="list-book mb-2 ml-3 list-book "><span className="fw-bold "><Link to="/dash/bookmark">Business info</Link></span></div>
+                   <div className="list-book mb-2 ml-3 list-book "><span className="fw-bold "><Link to="/dash/review">Reviews</Link></span></div>
+                   <div className="list-book mb-2 ml-3 list-book "><span className="fw-bold "><Link to="/dash/photos">Photos</Link></span></div>
+                   <div className="list-book mb-2 ml-3 list-book "><span className="fw-bold "><Link to="/dash/category">Category</Link></span></div>
                    <div className="list-book mb-2 ml-3 list-book "><span className="fw-bold ">Create Blogs</span></div>
                    <div className="list-book mb-2 ml-3 list-book "><span className="fw-bold ">User Dashboard</span></div>
                    </div>

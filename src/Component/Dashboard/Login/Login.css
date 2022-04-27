@@ -2,8 +2,13 @@
 width: 100%;
 }
 .log-img{
-    background-image: url('./../../../../public/assets/background.jpg');
+    background-image: url('./../../../../public/assets/login-image1.jpg');
+    width: 56%;
     height: 100vh;
+    background-size: 100% 100vw;
+     background-repeat: no-repeat;
+  
+    
 }
 .log-form{
     

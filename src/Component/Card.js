@@ -26,7 +26,7 @@ export default function Card(props) {
   
   return (
     <>
-    <div className="row m-2">
+    <div className="row m-2 card-browse">
       <div className="card m-3 field-card-main ml-2 ">
         <img src={thumbUri} className="img-card card-img-top img-fluid" alt="..." />
           <div className="field-card-body">

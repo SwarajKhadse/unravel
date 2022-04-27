@@ -33,8 +33,9 @@ function Navbar() {
     <>
       {/* main body */}
       <div className="back-img main-body">
-       
+      {/* <img src='/assets/Home-image.jpg' className="bacv-img" alt="" /> */}
         {/* nav bar start */}
+     
         <div className="bg-img">
           <nav className="navbar navbar-expand-lg navbar-dark nav-bar">
             <div className="container-fluid">

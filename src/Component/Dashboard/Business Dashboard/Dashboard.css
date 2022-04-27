@@ -18,12 +18,17 @@
 .user-logo{
    width: 70px;
    height: 70px;
-    background-color:  rgb(28, 28, 223);
+    /* background-color:  rgb(28, 28, 223); */
     border-radius: 50%;
-    color: white;
+    /* color: white; */
     margin-left: 20px;
     
             
+}
+.user-image{
+    width: 70px;
+    border: 1px solid black;
+    border-radius: 50%;
 }
 .hello{
    color: rgb(114, 109, 109);
@@ -76,4 +81,8 @@ border-radius: 5px;
 }
 .list1-cont{
     margin-top: 20px;
+    list-style: none;
+}
+.list1{
+list-style: none;
 }

@@ -3,14 +3,14 @@ import Rate from "./Rate";
 import axios from 'axios'
 export default function AboutReview() {
   const [reviewData, setReviewData] = useState([]);
-  const getReviewsData = async () => {
-    const reqUrl = `Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/review/business/{business_id}`;
+  const getReviewData = async () => {
+    const reqUrl = `http://Unravelweb-env.eba-sbqnztii.us-east-1.elasticbeanstalk.com/review/business/616b2d4e7e382a3d90882bf6`;
 
     await axios
       .get(reqUrl)
       .then((res) => {
         if (res.data.isSuccess == true) {
-          console.log(res.data, "res.data.reviews");
+          console.log(res.data, "res.data");
           // alert("User Registered successFully")
           setReviewData(res.data.data);
         } else {
@@ -24,7 +24,7 @@ export default function AboutReview() {
   };
 
   useEffect(() => {
-    getReviewsData();
+    getReviewData();
   }, [])
 
   return (
@@ -42,8 +42,6 @@ export default function AboutReview() {
           })
 }
       </div>
-       
-      
       <br />
       <br />
       <br />

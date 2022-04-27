@@ -19,16 +19,18 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
-     
+    position: relative;
+    top: 11px;
 }
 .date{
     font-size: 13px;
-    margin-left: 50px;
+    margin-left: 105px;
 
 }
-.read-butt{
+.read-butt1{
     margin-left: 10px;
-    margin-top: -17px;
+    position: relative;
+    margin-top: 20px;
 }
 .abc{
     display: flex;
