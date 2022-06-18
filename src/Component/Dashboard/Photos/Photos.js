@@ -5,6 +5,7 @@ import "./PhotosSepp";
 import PhotosSepp from "./PhotosSepp";
 import Footer from "../../Footer";
 import axios from "axios";
+import PhotoUpload from './PhotoUpload'
 function Photos() {
 //////////extra /////////////
 
@@ -65,7 +66,7 @@ const changeHandler = (event) => {
 
 const handleSubmission = () => {
 };
-console.log("fcgfhfhfhfhfhgkgkhfhf"+selectedFile)
+console.log("fcgfhfhfhfhfhgkgkhfhf" +"    "+selectedFile)
 
 const addPhotos = async () => {
   let reqUrl =
@@ -100,12 +101,6 @@ const addPhotos = async () => {
 
 };
 
-
-
-
-
-
-  
   console.log(photos);
   return (
     <>
@@ -143,16 +138,14 @@ const addPhotos = async () => {
                 <div>
                   <h2 className="fw-bold pqr ">Photos </h2>
                 </div>
-                <div className="pqr ">
-                  <button type="button" class="btn btn-primary">
-                    Delete Photo
-                  </button>
+                {/* <div className="pqr ">
+                
                   <input type="file" name="file" onChange={changeHandler} />
 			<div>
 				<button onClick={handleSubmission}>Submit</button>
         <img src={selectedFile} alt="abc" />
 			</div>
-                </div>
+                </div> */}
               </div>
               <div className="row">
                 {photos.map((data) => {
@@ -163,11 +156,12 @@ const addPhotos = async () => {
                     </div>
                   );
                 })}
-               
+                 <PhotoUpload/>
               </div>
             </div>
           </div>
         </div>
+       
         <Footer />
       </div>
     </>

@@ -17,7 +17,7 @@ function Bookmark() {
           console.log(res);
           console.log(res.data, "res.data.buisness");
           console.log(res.data.data, "res.data.data");
-          setBookmarkData(res.data.data);
+          setBookmarkData([...bookmarkData,res.data.data])
         
          console.log("kagaz" + bookmarkData)
           // alert("User Registered successFully")
@@ -32,6 +32,7 @@ function Bookmark() {
   };
   useEffect(() => {
     getBookmarkData();
+
   }, [])
   return (
     <>

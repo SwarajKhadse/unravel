@@ -163,7 +163,7 @@ const auto2 = () => {
             Check Ratings, Read Reviews & Buy
           </h3>
 {/* search bar */}
-<div className='relative flex bg-white w-4/6 rounded-lg items-center justify-between' style={{'z-index': 1}}>
+{/* <div className='relative flex bg-white w-4/6 rounded-lg items-center justify-between' style={{'z-index': 1}}>
             <input
             id="name"
               className='rounded-sm px-3 w-3/6 py-3 rounded-l-md'
@@ -203,12 +203,12 @@ const auto2 = () => {
               <a onClick={() => navigate(`all-business/${name}/${location !=  "" ? location : "empty" }`)}>Search Here</a>
             </div>
           </div>
-        </div>
+        </div> */}
 
 
 
 
-          {/* <div className="search-text-center">
+          <div className="search-text-center1">
             <input
               type="text"
               className="input-search "
@@ -225,7 +225,7 @@ const auto2 = () => {
               Search
             </button>
           </div>
-        </div> */}
+        </div>
 {/* search bar end */}
         <div className="Services ">
           <div className="Services-compo">

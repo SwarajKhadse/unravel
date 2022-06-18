@@ -366,16 +366,14 @@ function Business() {
                   placeholder="example@gmail.com"
                 />
               </div>
-              {/* <Select
+              <Select
                 closeMenuOnSelect={false}
                 components={animatedComponents}
                 defaultValue={[colorOptions[4], colorOptions[5]]}
                 isMulti
                 options={colorOptions}
-                value={(e) => {
-                  handelChange(e.target.value);
-                }}
-              /> */}
+                
+              />
               <Select
                 defaultValue={selectedOption}
                 onChange={(e)=>{

@@ -169,7 +169,7 @@ border: none;
     margin-left: 10px;
     margin-right: 10px;
 }
-.search-text-center{
+.search-text-center1{
 display: flex;
 justify-content: flex-start;
 align-items: flex-start;
@@ -179,12 +179,12 @@ align-items: flex-start;
 }
 
 @media only screen and (max-width:700px) and (min-width: 300px){
-  .search-text-center{
+  .search-text-center1{
       display: flex;
       flex-direction: column;
      align-items: center;
           position: relative;
-          top: -11px;
+          top: 35px;
   }
   .input-search{
  width: 100%;         

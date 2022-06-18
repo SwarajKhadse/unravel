@@ -1,4 +1,4 @@
- .card-body{
+.card-body{
    
     border-radius: 15px;
     height: 200px;
@@ -19,11 +19,10 @@
 }
 .card-title{
 font-weight: bold;
-
+color: white;
 }
 .img-rev{
     margin-left: 0px;
     margin-right: 0px;
    
 }
-
